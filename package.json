@@ -12,6 +12,7 @@
     "prepare": "lefthook install"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-context": "^1.1.1",
     "@radix-ui/react-scroll-area": "^1.2.0",
