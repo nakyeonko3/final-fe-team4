@@ -5,23 +5,23 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-export const SOUND_STATUS_TYPES = {
-  SPEED: 'global_speed',
-  VOLUME: 'global_volume',
-  PITCH: 'global_pitch',
+export const UNIT_SOUND_STATUS_TYPES = {
+  SPEED: 'unit_speed',
+  VOLUME: 'unit_volume',
+  PITCH: 'unit_pitch',
 } as const;
 
-export type StatusType = (typeof SOUND_STATUS_TYPES)[keyof typeof SOUND_STATUS_TYPES];
+export type UnitStatusType = (typeof UNIT_SOUND_STATUS_TYPES)[keyof typeof UNIT_SOUND_STATUS_TYPES];
 
 interface SoundStatusProps extends React.HTMLAttributes<HTMLDivElement> {
-  type: StatusType;
+  type: UnitStatusType;
   value: number;
 }
 
 export const STATUS_CONFIGS = {
-  [SOUND_STATUS_TYPES.SPEED]: { icon: CirclePlay, unit: 'x' },
-  [SOUND_STATUS_TYPES.VOLUME]: { icon: Volume2, unit: '%' },
-  [SOUND_STATUS_TYPES.PITCH]: { icon: AudioWaveform, unit: '' },
+  [UNIT_SOUND_STATUS_TYPES.SPEED]: { icon: CirclePlay, unit: 'x' },
+  [UNIT_SOUND_STATUS_TYPES.VOLUME]: { icon: Volume2, unit: '%' },
+  [UNIT_SOUND_STATUS_TYPES.PITCH]: { icon: AudioWaveform, unit: '' },
 } as const;
 
 const SoundStatus = React.forwardRef<HTMLDivElement, SoundStatusProps>(
